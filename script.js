@@ -1,8 +1,9 @@
-const place = document.querySelector("#place").textContent;
-const country = document.querySelector("#country").textContent;
-const search = document.querySelector("#submit").addEventListener('click', console.log("hello"))
-
-const isoCodes = [ 
+const apiKey = "ec5f6e6216821bdec75e4a9e625dd8a7"
+const search = document.querySelector("#submit");
+let place = document.querySelector("#place");
+let country = document.querySelector("#country");
+let isoCode;
+const allIsoCodes = [ 
 {"name": "Afghanistan", "code": "AF"}, 
 {"name": "land Islands", "code": "AX"}, 
 {"name": "Albania", "code": "AL"}, 
@@ -248,10 +249,23 @@ const isoCodes = [
 {"name": "Zambia", "code": "ZM"}, 
 {"name": "Zimbabwe", "code": "ZW"} 
 ]
-
-    // const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${countryCode}&appid=ec5f6e6216821bdec75e4a9e625dd8a7`;
-    // let coords =[]
-    // fetch(url)
-    // .then((r) => r.json())
-    //   .then((d)=> coords.push(d[0].lat, d[0].lon));
-    // console.log(coords);
+search.addEventListener('click', ()=> {
+    allIsoCodes.map(item => {
+        if(country.value.toLowerCase() == item.name.toLowerCase()){
+            isoCode = item.code
+        }
+    });
+    console.log(place.value);
+    console.log(isoCode);
+    const url1 = `https://api.openweathermap.org/geo/1.0/direct?q=${place.value},${isoCode}&appid=${apiKey}`;
+    async function getApi(){
+        let coords = await fetch(url1)
+            .then((r) => r.json())
+            .then((d)=> [d[0].lon, d[0].lat]);
+            let url2 = `https://api.openweathermap.org/data/2.5/weather?lat=${coords[0]}&lon=${coords[1]}&appid=${apiKey}`;
+            let weather = await fetch(url2)
+            .then((r) => r.json())
+            console.log(weather)     
+    }
+    getApi();
+})

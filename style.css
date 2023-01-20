@@ -1,6 +1,6 @@
 body{
     color: rgb(54, 54, 54);
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Comfortaa', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,35 +10,39 @@ body{
     height:40vh;
     background: url('assets/heroimg1.webp');
     background-size:cover;
-}
-#hero>div{
-    height:100%;
-    width:100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: sticky;
     top:0px;
     z-index: 0;
 }
+#hero>div{
+    height:100%;
+    width:100%;
+    background: rgba(0, 0, 0, 0.555);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 h1{
     height:100%;
-    font-size: 4em;
-    color: white;
+    font-size: 5em;
+    color: rgb(255, 255, 255);
     text-align: center;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes', 'Script Mt', cursive;
     letter-spacing: 3px;
+    animation: fadeup 0.7s;
 }
 #searchbox{
     display: flex;
     width: 80%;
+    max-width: 800px;
     padding: 10px;
     justify-content: space-evenly;
     align-items: center;
+    animation: fadeup 0.5s 0.3s;
+    gap: 15px;
 }
 .text--input{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'comfortaa', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.2em;
     border-style: none;
     text-indent: 5px;
@@ -46,25 +50,45 @@ h1{
     padding:10px;
     border-radius: 30px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.63);
-    max-width: 200px;
+    width: 100%;
 }
 .text--input:focus{
     outline: none;
-}
-#submit>img{
-    width: 25px;
-    height:30px;
-}
-#submit{
-    cursor: pointer;
+    box-shadow: 0px 0px 5px rgb(0, 183, 255);
     transition: 0.2s;
 }
+#submit>img{
+    width: 30px;
+}
+#submit{
+    height:30px;
+    border-radius: 30px;
+    padding:10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.63);
+}
 #submit:hover{
+    transition: 0.4s;
     scale:1.1;
 }
 main{
     height: 60vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+h2{
+    font-size: 2.6em;
+    width: 70%;
+    text-align: center;
+    margin-block: 50px;
+}
+@keyframes fadeup {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+    }
 }
