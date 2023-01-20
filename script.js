@@ -1,3 +1,25 @@
+
+const head1 = document.querySelector('.t0');
+const head2 = document.querySelector('.t1');
+const head3 = document.querySelector('.t2');
+setInterval(()=>{
+    setTimeout(()=>{
+        head1.classList.add('show')
+        head3.classList.remove('show')
+        head2.classList.remove('show')
+    }, 3000)
+    setTimeout(()=>{
+        head2.classList.add('show')
+        head3.classList.remove('show')
+        head1.classList.remove('show');
+    }, 6000)
+    setTimeout(()=>{
+        head3.classList.add('show')
+        head1.classList.remove('show');
+        head2.classList.remove('show');
+    }, 9000)
+}, 9000)
+
 const apiKey = "ec5f6e6216821bdec75e4a9e625dd8a7"
 const search = document.querySelector("#submit");
 let place = document.querySelector("#place");
@@ -268,4 +290,5 @@ search.addEventListener('click', ()=> {
             console.log(weather)     
     }
     getApi();
+
 })
