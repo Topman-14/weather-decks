@@ -1,0 +1,70 @@
+body{
+    color: rgb(54, 54, 54);
+    font-family: 'Comfortaa', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px;
+}
+#hero{
+    height:40vh;
+    background: url('assets/heroimg1.webp');
+    background-size:cover;
+}
+#hero>div{
+    height:100%;
+    width:100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top:0px;
+    z-index: 0;
+}
+h1{
+    height:100%;
+    font-size: 4em;
+    color: white;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 3px;
+}
+#searchbox{
+    display: flex;
+    width: 80%;
+    padding: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.text--input{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2em;
+    border-style: none;
+    text-indent: 5px;
+    height: 30px;
+    padding:10px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.63);
+    max-width: 200px;
+}
+.text--input:focus{
+    outline: none;
+}
+#submit>img{
+    width: 25px;
+    height:30px;
+}
+#submit{
+    cursor: pointer;
+    transition: 0.2s;
+}
+#submit:hover{
+    scale:1.1;
+}
+main{
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
